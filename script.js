@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
 // 2. Scroll Reveal Animations (The "Sleek" effect)
 const observerOptions = {
     threshold: 0.1, // Trigger when 10% of element is visible
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -25px 0px"
 };
 
 const observer = new IntersectionObserver((entries) => {
