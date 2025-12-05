@@ -1,0 +1,695 @@
+html {
+    scroll-behavior: smooth; /* This makes the scroll "glide" elegantly */
+}
+
+section {
+    scroll-margin-top: 100px; /* This prevents the fixed navbar from covering your titles */
+}
+
+:root {
+    /* UPDATED: Matches the Logo's "Electric Yellow" */
+    --primary: #FFDE00; 
+    
+    /* Slightly darker yellow for hover effects */
+    --primary-hover: #E6C800; 
+    
+    /* The rest stays the same */
+    --bg-dark: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    
+    --font-head: 'Rajdhani', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.accent {
+    color: var(--primary);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Gold underline accent */
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.center { text-align: center; }
+.center::after { left: 50%; transform: translateX(-50%); }
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding { padding: 80px 0; }
+.bg-darker { background-color: #050505; /* Pitch black for contrast */ }
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    transition: 0.3s;
+    z-index: 1000;
+    background-color: rgba(15, 15, 15, 0.95); /* Always have a background */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+nav.scrolled {
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* UPDATED LOGO STYLING */
+.logo {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+    /* This aligns the image and text side-by-side */
+    display: flex; 
+    align-items: center;
+    gap: 12px; /* Space between logo and text */
+}
+
+/* Control the logo image size */
+.logo img {
+    height: 50px; /* Adjust this number to make it bigger/smaller */
+    width: auto;  /* Keeps the aspect ratio correct */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.btn-nav {
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: var(--primary) !important;
+}
+
+.btn-nav:hover { 
+    background: var(--primary); 
+    color: #000 !important;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+}
+
+/* Hero Section with Slider */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Hides the images that scroll off screen */
+    background-color: #000;
+}
+
+/* The Sliding Container */
+.sliding-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind everything */
+}
+
+/* The Track that moves */
+.slide-track {
+    display: flex;
+    width: calc(100vh * 8); /* Enough width to hold all images */
+    animation: scroll 60s linear infinite; /* 60s = speed (higher is slower) */
+}
+
+/* Individual Slide Logic */
+.slide {
+    height: 100vh;
+    width: 80vh; /* Aspect ratio for the strip */
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevents squishing */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without stretching */
+    
+    /* AUTOMATIC INDUSTRIAL FILTER */
+    /* This automatically makes your photos look dark and gritty */
+    filter: grayscale(80%) contrast(120%) brightness(60%); 
+}
+
+/* The Animation Keyframes */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* This must match the width of ONE set of images */
+        /* If you have 4 images of 80vh width each, it moves -320vh */
+        transform: translateX(calc(-80vh * 4)); 
+    }
+}
+
+/* Overlay needs to be slightly lighter now since images are dark */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+    z-index: 1; /* On top of images */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* On top of overlay */
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20, 20, 0, 0.7) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 60px; /* Push down from fixed navbar */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #000;
+    border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: black;
+}
+
+/* About & Services */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 15px 15px 0px rgba(255, 215, 0, 0.1);
+}
+
+.about-image img:hover {
+    filter: grayscale(0%);
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list i {
+    color: var(--primary);
+    margin-right: 15px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.05);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Why Choose Us Banner - FIXED & IMPROVED */
+.why-banner {
+    background: linear-gradient(90deg, #111, #1a1a1a);
+    padding: 40px 50px;
+    border-left: 6px solid var(--primary); /* Thicker gold accent line */
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth so it doesn't look flat */
+}
+
+.why-content {
+    display: flex;
+    justify-content: space-between; /* Spreads title and badges nicely */
+    align-items: center; /* Ensures text is vertically centered */
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    gap: 30px;
+}
+
+.why-title {
+    font-size: 2rem;
+    margin: 0;
+    /* Prevent title from wrapping awkwardly */
+    white-space: nowrap; 
+}
+
+.badges {
+    display: flex;
+    gap: 50px; /* Consistent spacing between stats */
+    align-items: center;
+}
+
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 100px; /* Ensures they don't get squished */
+}
+
+.badge-item i {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.big-num {
+    font-family: var(--font-head);
+    font-size: 2.8rem; /* Made slightly larger */
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Slight gold glow */
+}
+
+.badge-item span:last-child {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Mobile fix for this section */
+@media (max-width: 900px) {
+    .why-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .why-banner {
+        border-left: none;
+        border-top: 6px solid var(--primary);
+    }
+
+    .badges {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+}
+
+.why-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.badges {
+    display: flex;
+    gap: 40px;
+}
+
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.big-num {
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 4px;
+    border-top: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    border-top: 3px solid var(--primary);
+}
+
+.stars { color: var(--primary); margin-bottom: 15px; }
+
+.review-card cite {
+    display: block;
+    margin-top: 20px;
+    color: var(--primary);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Contact */
+.grid-2-bias {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.info-item a { color: white; text-decoration: none; }
+.info-item a:hover { color: var(--primary); }
+
+.hours-box {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    border: 1px solid #333;
+}
+
+.hours-box ul { list-style: none; margin-top: 10px; }
+.hours-box li { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 8px;}
+.hours-box span { font-weight: 700; color: var(--primary); }
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #333;
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.policy i { color: var(--primary); margin-right: 5px; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .grid-2, .grid-2-bias { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } 
+    .why-content { justify-content: center; text-align: center; }
+    .badges { flex-direction: column; gap: 20px; }
+    .hamburger { display: block; color: white; font-size: 1.5rem; cursor: pointer; }
+    .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
+    .cta-group { display: flex; flex-direction: column; align-items: center; }
+}
+
+/* Animations */
+.hidden, .hidden-left, .hidden-right, .hidden-up {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.hidden-left { transform: translateX(-50px); }
+.hidden-right { transform: translateX(50px); }
+.hidden-up { transform: translateY(50px); }
+
+.show { opacity: 1; transform: none; }
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+
+/* Showcase / Gallery Section */
+.gallery-grid {
+    display: grid;
+    /* This creates a responsive grid that adjusts automatically */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Ensure the video fits the container */
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Important: ensures video covers the box without stretching/squishing */
+    transition: transform 0.5s ease;
+}
+
+/* UPDATED SHOWCASE ITEM SIZE (3:4 PORTRAIT) */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    /* NEW: Setting the height based on the width (300px * 4/3 = 400px) */
+    width: 100%; /* Take up all available column width */
+    height: 450px; /* Adjusted height for 3:4 ratio */
+    
+    border: 1px solid #333;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    /* Optional: Makes images black & white until hover */
+    filter: grayscale(100%); 
+}
+
+/* The dark overlay that appears on hover */
+.gallery-item .overlay {
+    position: absolute;
+    bottom: -100%; /* Hidden below the card initially */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    transition: bottom 0.3s ease;
+    z-index: 2;
+}
+
+.gallery-item .overlay h3 {
+    color: var(--primary); /* Gold Text */
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.gallery-item .overlay p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* HOVER EFFECTS */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Slight Zoom */
+    filter: grayscale(0%); /* Restore Color */
+}
+
+.gallery-item:hover {
+    border-color: var(--primary); /* Gold Border appears */
+}
+
+.gallery-item:hover .overlay {
+    bottom: 0; /* Slide text up */
+}
+
+/* Mobile Menu Animation - Slide Down Effect */
+@media (max-width: 768px) {
+    .nav-links {
+        /* 1. Positioning */
+        position: absolute;
+        top: 100%; /* Sits right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(15, 15, 15, 0.98); /* Dark background */
+        
+        /* 2. Layout (Vertical List) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        
+        /* 3. HIDDEN STATE (The "Slide Up" position) */
+        max-height: 0;       /* Height is zero = hidden */
+        overflow: hidden;    /* Hide any text that spills out */
+        opacity: 0;          /* Fade out */
+        padding: 0;          /* No padding when closed */
+        
+        /* 4. THE MAGIC ANIMATION */
+        transition: all 0.5s ease-in-out; /* Smoothly change height over 0.5 seconds */
+    }
+
+    /* 5. VISIBLE STATE (When JavaScript adds this class) */
+    .nav-links.active {
+        max-height: 500px;   /* Large enough to fit all links */
+        opacity: 1;          /* Fade in */
+        padding: 30px 0;     /* Add spacing */
+        border-bottom: 2px solid var(--primary);
+    }
+}
