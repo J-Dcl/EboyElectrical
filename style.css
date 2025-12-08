@@ -1,26 +1,20 @@
-html {
-    scroll-behavior: smooth; /* This makes the scroll "glide" elegantly */
-}
-
-section {
-    scroll-margin-top: 100px; /* This prevents the fixed navbar from covering your titles */
-}
-
 :root {
-    /* UPDATED: Matches the Logo's "Electric Yellow" */
-    --primary: #FFDE00; 
-    
-    /* Slightly darker yellow for hover effects */
-    --primary-hover: #E6C800; 
-    
-    /* The rest stays the same */
+    --primary: #FFDE00;
+    --primary-hover: #E6C800;
     --bg-dark: #0f0f0f;
     --bg-card: #1a1a1a;
     --text-main: #ffffff;
     --text-muted: #b0b0b0;
-    
     --font-head: 'Rajdhani', sans-serif;
     --font-body: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
 }
 
 * {
@@ -35,13 +29,9 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    background-color: var(--bg-dark);
-    /* NEW LINE: This stops any horizontal scrolling completely */
-    overflow-x: hidden; 
     width: 100%;
 }
 
-/* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-head);
     text-transform: uppercase;
@@ -60,7 +50,6 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
-/* Gold underline accent */
 .section-title::after {
     content: '';
     width: 60px;
@@ -71,20 +60,29 @@ h1, h2, h3, h4 {
     left: 0;
 }
 
-.center { text-align: center; }
-.center::after { left: 50%; transform: translateX(-50%); }
+.center {
+    text-align: center;
+}
 
-/* Layout Utilities */
+.center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.section-padding { padding: 80px 0; }
-.bg-darker { background-color: #050505; /* Pitch black for contrast */ }
+.section-padding {
+    padding: 80px 0;
+}
 
-/* Navbar */
+.bg-darker {
+    background-color: #050505;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -92,7 +90,7 @@ nav {
     padding: 20px 0;
     transition: 0.3s;
     z-index: 1000;
-    background-color: rgba(15, 15, 15, 0.95); /* Always have a background */
+    background-color: rgba(15, 15, 15, 0.95);
     border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
 
@@ -107,7 +105,6 @@ nav.scrolled {
     align-items: center;
 }
 
-/* UPDATED LOGO STYLING */
 .logo {
     font-family: var(--font-head);
     font-size: 1.8rem;
@@ -115,17 +112,14 @@ nav.scrolled {
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
-    
-    /* This aligns the image and text side-by-side */
-    display: flex; 
+    display: flex;
     align-items: center;
-    gap: 12px; /* Space between logo and text */
+    gap: 12px;
 }
 
-/* Control the logo image size */
 .logo img {
-    height: 50px; /* Adjust this number to make it bigger/smaller */
-    width: auto;  /* Keeps the aspect ratio correct */
+    height: 50px;
+    width: auto;
 }
 
 .nav-links {
@@ -144,7 +138,9 @@ nav.scrolled {
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover {
+    color: var(--primary);
+}
 
 .btn-nav {
     border: 1px solid var(--primary);
@@ -153,17 +149,16 @@ nav.scrolled {
     color: var(--primary) !important;
 }
 
-.btn-nav:hover { 
-    background: var(--primary); 
+.btn-nav:hover {
+    background: var(--primary);
     color: #000 !important;
     font-weight: bold;
 }
 
 .hamburger {
-    display: none; /* Hidden on desktop */
+    display: none;
 }
 
-/* Hero Section with Slider */
 .hero {
     height: 100vh;
     position: relative;
@@ -171,86 +166,65 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* Hides the images that scroll off screen */
+    overflow: hidden;
     background-color: #000;
 }
 
-/* The Sliding Container */
 .sliding-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Behind everything */
+    z-index: 0;
 }
 
-/* The Track that moves */
 .slide-track {
     display: flex;
-    width: calc(100vh * 8); /* Enough width to hold all images */
-    animation: scroll 60s linear infinite; /* 60s = speed (higher is slower) */
+    width: calc(100vh * 8);
+    animation: scroll 60s linear infinite;
 }
 
-/* Individual Slide Logic */
 .slide {
     height: 100vh;
-    width: 80vh; /* Aspect ratio for the strip */
+    width: 80vh;
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Prevents squishing */
+    flex-shrink: 0;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers the area without stretching */
-    
-    /* AUTOMATIC INDUSTRIAL FILTER */
-    /* This automatically makes your photos look dark and gritty */
-    filter: grayscale(80%) contrast(120%) brightness(60%); 
+    object-fit: cover;
+    filter: grayscale(80%) contrast(120%) brightness(60%);
 }
 
-/* The Animation Keyframes */
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        /* This must match the width of ONE set of images */
-        /* If you have 4 images of 80vh width each, it moves -320vh */
-        transform: translateX(calc(-80vh * 4)); 
+        transform: translateX(calc(-80vh * 4));
     }
 }
 
-/* Overlay needs to be slightly lighter now since images are dark */
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
-    z-index: 1; /* On top of images */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 0, 0.7) 100%);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* On top of overlay */
+    z-index: 2;
     max-width: 800px;
     padding: 20px;
     margin-top: 60px;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20, 20, 0, 0.7) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 20px;
-    margin-top: 60px; /* Push down from fixed navbar */
 }
 
 .hero h1 {
@@ -267,7 +241,6 @@ nav.scrolled {
     margin-bottom: 40px;
 }
 
-/* Buttons */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -302,7 +275,6 @@ nav.scrolled {
     color: black;
 }
 
-/* About & Services */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -365,33 +337,31 @@ nav.scrolled {
     margin-bottom: 20px;
 }
 
-/* Why Choose Us Banner - FIXED & IMPROVED */
 .why-banner {
     background: linear-gradient(90deg, #111, #1a1a1a);
     padding: 40px 50px;
-    border-left: 6px solid var(--primary); /* Thicker gold accent line */
+    border-left: 6px solid var(--primary);
     border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth so it doesn't look flat */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .why-content {
     display: flex;
-    justify-content: space-between; /* Spreads title and badges nicely */
-    align-items: center; /* Ensures text is vertically centered */
-    flex-wrap: wrap; /* Allows stacking on mobile */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 .why-title {
     font-size: 2rem;
     margin: 0;
-    /* Prevent title from wrapping awkwardly */
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .badges {
     display: flex;
-    gap: 50px; /* Consistent spacing between stats */
+    gap: 50px;
     align-items: center;
 }
 
@@ -400,7 +370,7 @@ nav.scrolled {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-width: 100px; /* Ensures they don't get squished */
+    min-width: 100px;
 }
 
 .badge-item i {
@@ -410,11 +380,11 @@ nav.scrolled {
 
 .big-num {
     font-family: var(--font-head);
-    font-size: 2.8rem; /* Made slightly larger */
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--primary);
     line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Slight gold glow */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
 .badge-item span:last-child {
@@ -426,54 +396,6 @@ nav.scrolled {
     margin-top: 5px;
 }
 
-/* Mobile fix for this section */
-@media (max-width: 900px) {
-    .why-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .why-banner {
-        border-left: none;
-        border-top: 6px solid var(--primary);
-    }
-
-    .badges {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 20px;
-    }
-}
-
-.why-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.badges {
-    display: flex;
-    gap: 40px;
-}
-
-.badge-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.big-num {
-    font-family: var(--font-head);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-/* Reviews */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -492,7 +414,10 @@ nav.scrolled {
     border-top: 3px solid var(--primary);
 }
 
-.stars { color: var(--primary); margin-bottom: 15px; }
+.stars {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
 
 .review-card cite {
     display: block;
@@ -502,7 +427,6 @@ nav.scrolled {
     font-style: normal;
 }
 
-/* Contact */
 .grid-2-bias {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -522,8 +446,14 @@ nav.scrolled {
     margin-top: 5px;
 }
 
-.info-item a { color: white; text-decoration: none; }
-.info-item a:hover { color: var(--primary); }
+.info-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    color: var(--primary);
+}
 
 .hours-box {
     background: #1e1e1e;
@@ -533,9 +463,23 @@ nav.scrolled {
     border: 1px solid #333;
 }
 
-.hours-box ul { list-style: none; margin-top: 10px; }
-.hours-box li { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 8px;}
-.hours-box span { font-weight: 700; color: var(--primary); }
+.hours-box ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.hours-box li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+}
+
+.hours-box span {
+    font-weight: 700;
+    color: var(--primary);
+}
 
 .map-container {
     border-radius: 8px;
@@ -550,7 +494,6 @@ nav.scrolled {
     border: 0;
 }
 
-/* Footer */
 footer {
     background: #000;
     padding: 30px 0;
@@ -558,62 +501,31 @@ footer {
     border-top: 1px solid #222;
 }
 
-.policy i { color: var(--primary); margin-right: 5px; }
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .grid-2, .grid-2-bias { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.5rem; }
-    .nav-links { display: none; } 
-    .why-content { justify-content: center; text-align: center; }
-    .badges { flex-direction: column; gap: 20px; }
-    .hamburger { display: block; color: white; font-size: 1.5rem; cursor: pointer; }
-    .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
-    .cta-group { display: flex; flex-direction: column; align-items: center; }
+.policy i {
+    color: var(--primary);
+    margin-right: 5px;
 }
 
-/* Animations */
-.hidden, .hidden-left, .hidden-right, .hidden-up {
-    opacity: 0;
-    transition: all 1s ease;
-}
-
-.hidden-left { transform: translateX(-50px); }
-.hidden-right { transform: translateX(50px); }
-.hidden-up { transform: translateY(50px); }
-
-.show { opacity: 1; transform: none; }
-
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-
-/* Showcase / Gallery Section */
 .gallery-grid {
     display: grid;
-    /* This creates a responsive grid that adjusts automatically */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-/* Ensure the video fits the container */
 .gallery-item video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Important: ensures video covers the box without stretching/squishing */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-/* UPDATED SHOWCASE ITEM SIZE (3:4 PORTRAIT) */
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
-    
-    /* NEW: Setting the height based on the width (300px * 4/3 = 400px) */
-    width: 100%; /* Take up all available column width */
-    height: 450px; /* Adjusted height for 3:4 ratio */
-    
+    width: 100%;
+    height: 450px;
     border: 1px solid #333;
 }
 
@@ -622,24 +534,22 @@ footer {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    /* Optional: Makes images black & white until hover */
-    filter: grayscale(100%); 
+    filter: grayscale(100%);
 }
 
-/* The dark overlay that appears on hover */
 .gallery-item .overlay {
     position: absolute;
-    bottom: -100%; /* Hidden below the card initially */
+    bottom: -100%;
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
     transition: bottom 0.3s ease;
     z-index: 2;
 }
 
 .gallery-item .overlay h3 {
-    color: var(--primary); /* Gold Text */
+    color: var(--primary);
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
@@ -649,51 +559,127 @@ footer {
     font-size: 0.9rem;
 }
 
-/* HOVER EFFECTS */
 .gallery-item:hover img {
-    transform: scale(1.1); /* Slight Zoom */
-    filter: grayscale(0%); /* Restore Color */
+    transform: scale(1.1);
+    filter: grayscale(0%);
 }
 
 .gallery-item:hover {
-    border-color: var(--primary); /* Gold Border appears */
+    border-color: var(--primary);
 }
 
 .gallery-item:hover .overlay {
-    bottom: 0; /* Slide text up */
+    bottom: 0;
 }
 
-/* Mobile Menu Animation - Slide Down Effect */
+.hidden, .hidden-left, .hidden-right, .hidden-up {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.hidden-left {
+    transform: translateX(-50px);
+}
+
+.hidden-right {
+    transform: translateX(50px);
+}
+
+.hidden-up {
+    transform: translateY(50px);
+}
+
+.show {
+    opacity: 1;
+    transform: none;
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+@media (max-width: 900px) {
+    .why-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .why-banner {
+        border-left: none;
+        border-top: 6px solid var(--primary);
+    }
+
+    .badges {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    .grid-2, .grid-2-bias {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .why-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .badges {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+        display: block;
+    }
+
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .nav-links {
-        /* 1. Positioning */
         position: absolute;
-        top: 100%; /* Sits right below the navbar */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(15, 15, 15, 0.98); /* Dark background */
-        
-        /* 2. Layout (Vertical List) */
+        background-color: rgba(15, 15, 15, 0.98);
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        
-        /* 3. HIDDEN STATE (The "Slide Up" position) */
-        max-height: 0;       /* Height is zero = hidden */
-        overflow: hidden;    /* Hide any text that spills out */
-        opacity: 0;          /* Fade out */
-        padding: 0;          /* No padding when closed */
-        
-        /* 4. THE MAGIC ANIMATION */
-        transition: all 0.5s ease-in-out; /* Smoothly change height over 0.5 seconds */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        padding: 0;
+        transition: all 0.5s ease-in-out;
     }
 
-    /* 5. VISIBLE STATE (When JavaScript adds this class) */
     .nav-links.active {
-        max-height: 500px;   /* Large enough to fit all links */
-        opacity: 1;          /* Fade in */
-        padding: 30px 0;     /* Add spacing */
+        max-height: 500px;
+        opacity: 1;
+        padding: 30px 0;
         border-bottom: 2px solid var(--primary);
     }
 }
