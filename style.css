@@ -11,6 +11,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Added this to lock the width */
+    width: 100%;
 }
 
 section {
@@ -30,6 +32,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -689,6 +692,13 @@ footer {
     }
 }
 
+/* Position the Quote button above the Phone button */
+.fab-btn.quote {
+    bottom: 120px; /* 30px original + 60px height + 15px gap */
+    border: none;  /* Removes default gray button border */
+    cursor: pointer;
+}
+
 .fab-btn {
     position: fixed;
     bottom: 30px;
@@ -790,19 +800,6 @@ footer {
     transition: 0.3s;
 }
 
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.8); 
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s;
-}
-
 .close-modal {
     color: #aaa;
     float: right;
@@ -895,7 +892,7 @@ footer {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top of everything */
+    z-index: 3000; /* Sit on top of everything */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
