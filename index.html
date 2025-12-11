@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Eboy Electrical Rewinding Services",
+  "image": "https://j-dcl.github.io/EboyElectrical/preview.jpg.png",
+  "telephone": "09060768122",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Block 21 Lot 1, Lapu-Lapu Ave",
+    "addressLocality": "Navotas",
+    "addressRegion": "Metro Manila",
+    "postalCode": "1409",
+    "addressCountry": "PH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 14.649556426819768, 
+    "longitude": 120.95808186361933
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ],
+  "priceRange": "$"
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eboy Electrical Rewinding Services | Navotas</title>
     
     <meta property="og:title" content="Eboy Electrical Rewinding Services | Navotas">
     <meta property="og:description" content="Trusted electric motor rewinding and repair. 15+ years of experience.">
-    <meta property="og:image" content="https://your-github-username.github.io/eboy-electrical/preview.jpg">
-    <meta property="og:url" content="https://your-github-username.github.io/eboy-electrical/">
+    <meta property="og:image" content="https://j-dcl.github.io/EboyElectrical/preview.jpg.png">
+    <meta property="og:url" content="https://j-dcl.github.io/EboyElectrical/">
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <a href="tel:+639060768122" class="fab-btn">
+    <i class="fas fa-phone-alt"></i>
+</a>
 </head>
+
+
 <body>
+
+    <div id="preloader">
+    <div class="loader-content">
+        <img src="logo.png" alt="Loading..." class="pulsing-logo">
+        <div class="loading-bar"></div>
+    </div>
+</div>
 
     <nav id="navbar">
         <div class="container nav-content">
@@ -32,8 +82,8 @@
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
-        </div>
     </nav>
+    
 
     <section id="home" class="hero">
         <div class="sliding-background">
@@ -68,7 +118,10 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content hidden">
-            <h1 class="glitch-text">THE <span class="accent">GOLD</span> STANDARD IN MOTOR REPAIR.</h1>
+            <h1 class="glitch-text">
+    WE ARE EXPERTS IN <br>
+    <span class="txt-type" data-wait="2500" data-words='["MOTOR REWINDING", "GENERATOR REPAIR", "PREVENTIVE MAINTENANCE"]'></span>
+</h1>
             <p>Trusted electric motor rewinding and repair services backed by years of hands-on expertise in Navotas.</p>
             <div class="cta-group">
                 <a href="tel:09060768122" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
@@ -251,12 +304,8 @@
             
             <div class="map-container hidden-right">
                 <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    loading="lazy" 
-                    allowfullscreen="" 
-                    src="https://maps.google.com/maps?q=Block+21+Lot+1,+Lapu-Lapu+Ave,+Navotas&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1157612199313!2d120.95510997619039!3d14.649369585842795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4f64eeacc19%3A0x4189a9ef2bb04351!2sEboy%20Electrical%20Rewinding%20Services!5e0!3m2!1sen!2sph!4v1765470900391!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
                 </iframe>
             </div>
         </div>
@@ -266,8 +315,83 @@
         <div class="container footer-content">
             <p>&copy; 2022 Eboy Electrical Rewinding Services.</p>
         </div>
+
+        <section id="faq" class="section-padding">
+    <div class="container">
+        <h2 class="section-title center">FREQUENTLY <span class="accent">ASKED</span></h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer a warranty on rewinding?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we offer service warranty on all motor rewinding jobs to ensure your peace of mind.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does a typical repair take?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Standard motors (1-5HP) typically take 1-2 days. Larger industrial motors may take 5-7 days depending on the extent of the damage.</p>
+                </div>
+            </div>
+
+             <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer pick-up and delivery?
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We only offer deliveries within Navotas and nearby areas for light industrial equipment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     </footer>
 
+    <button id="openQuoteBtn" class="btn btn-primary" style="margin-top:10px;">Get a Free Quote</button>
+
+<div id="quoteModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">×</span>
+        <h2 class="center">REQUEST A <span class="accent">QUOTE</span></h2>
+        
+        <form class="quote-form" action="https://formspree.io/f/xwpgwbwp" method="POST">
+            
+            <input type="hidden" name="_subject" value="NEW QUOTE REQUEST (Formspree) - Eboy Electrical">
+            
+            <input type="hidden" name="_next" value="https://j-dcl.github.io/EboyElectrical/#home">
+            
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            
+            <select name="service_needed">
+                <option value="" disabled selected>Service Needed</option>
+                <option value="Motor Rewinding">Motor Rewinding</option>
+                <option value="General Repair">General Repair</option>
+                <option value="Preventive Maintenance">Preventive Maintenance</option>
+            </select>
+            
+            <textarea name="description" placeholder="Describe the motor issue (HP, symptoms, etc.)" rows="4"></textarea>
+            
+            <button type="submit" class="btn btn-primary" style="width:100%">Submit Request</button>
+        </form>
+    </div>
+</div>
+
     <script src="script.js"></script>
+    
 </body>
+
+
+<div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="myBar"></div>
+</div>
 </html>
