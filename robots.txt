@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# hide internal folders from search results
+Disallow: /assets/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://j-dcl.github.io/EboyElectrical/sitemap.xml
