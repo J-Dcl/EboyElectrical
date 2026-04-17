@@ -1,0 +1,11 @@
+{
+    "name": "Eboy Electrical",
+    "short_name": "EboyElec",
+    "icons": [
+        { "src": "/logo.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "/logo.png", "sizes": "512x512", "type": "image/png" }
+    ],
+    "theme_color": "#FFDE00",
+    "background_color": "#0f0f0f",
+    "display": "standalone"
+}

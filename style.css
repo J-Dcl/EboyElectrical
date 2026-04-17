@@ -1,10 +1,8 @@
-/* changes the color when you highlight text */
 ::selection {
-    background: #ffcc00; /* your brand yellow */
-    color: #000;         /* black text for contrast */
+    background: #ffcc00;
+    color: #000;
 }
 
-/* Custom Scrollbar for Eboy Electrical */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -24,9 +22,7 @@
 }
 
 :root {
-    /* Your existing variables here */
     --primary-color: #ffcc00;
-    /* ... rest of your code */
 }
 
 :root {
@@ -42,7 +38,7 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Added this to lock the width */
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -573,7 +569,7 @@ footer {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    filter: grayscale(100%);
+    filter: grayscale(0);
 }
 
 .gallery-item .overlay {
@@ -723,14 +719,13 @@ footer {
     }
 }
 
-/* Position the Quote button above the Phone button */
 .fab-btn.quote {
-    bottom: 120px; /* 30px original + 60px height + 15px gap */
-    border: none;  /* Removes default gray button border */
+    bottom: 120px;
+    border: none;
     cursor: pointer;
 }
 
-.fab-btn {
+.fab-btn.call {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -759,7 +754,6 @@ footer {
     100% { box-shadow: 0 0 0 0 rgba(255, 222, 0, 0); }
 }
 
-/* Cursor Effect */
 .txt-type > .txt {
     border-right: 0.2rem solid var(--primary);
     color: var(--primary);
@@ -771,15 +765,15 @@ footer {
     left: 0;
     width: 100%;
     height: 4px;
-    z-index: 2000; /* Above the navbar */
+    z-index: 2000;
     background: transparent;
 }
 
 .scroll-progress-bar {
     height: 4px;
-    background: var(--primary); /* Your yellow color */
+    background: var(--primary);
     width: 0%;
-    box-shadow: 0 0 10px var(--primary); /* Glow effect */
+    box-shadow: 0 0 10px var(--primary);
     transition: width 0.1s ease-out;
 }
 
@@ -823,10 +817,10 @@ footer {
     color: var(--text-muted);
 }
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust if text is long */
+    max-height: 200px;
 }
 .faq-item.active i {
-    transform: rotate(45deg); /* Turns the plus into an X */
+    transform: rotate(45deg);
     color: var(--primary);
     transition: 0.3s;
 }
@@ -864,7 +858,7 @@ footer {
     width: 100%;
     height: 100%;
     background-color: #000;
-    z-index: 99999; /* Highest priority */
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -919,24 +913,20 @@ footer {
     pointer-events: none;
 }
 
-/* Basic Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 3000; /* Sit on top of everything */
+    display: none;
+    position: fixed;
+    z-index: 3000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
 }
 
-/* --- Form Style Fixes --- */
-
-/* 1. Ensure the modal content uses the dark theme variable */
 .modal-content {
-    background-color: var(--bg-card); /* Using your variable #1a1a1a */
+    background-color: var(--bg-card);
     margin: 10% auto; 
     padding: 40px;
     border: 1px solid var(--primary);
@@ -945,38 +935,31 @@ footer {
     border-radius: 8px;
     position: relative;
     box-shadow: 0 0 20px rgba(255, 222, 0, 0.2);
-    /* Set a default text color for all content inside the modal */
-    color: var(--text-main); /* Inherit the white text color */
+    color: var(--text-main);
 }
 
-/* 2. Style all form elements for the dark theme */
 .quote-form input, .quote-form select, .quote-form textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    /* Background and border are already good: #0f0f0f and #333 */
-    background: var(--bg-dark); /* Use your dark variable for consistency */
+    background: var(--bg-dark);
     border: 1px solid #333;
-    /* Explicitly set text color to white */
     color: var(--text-main); 
     font-family: var(--font-body);
-    border-radius: 4px; /* Optional: adds a slight curve */
+    border-radius: 4px;
 }
 
-/* 3. Style the placeholders */
 .quote-form input::placeholder, 
 .quote-form textarea::placeholder {
-    color: var(--text-muted); /* Use your muted color for good contrast */
-    opacity: 1; /* Ensures it's not transparent in some browsers */
+    color: var(--text-muted);
+    opacity: 1;
 }
 
-/* 4. Keep the focus style for the border */
 .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { 
     border-color: var(--primary); 
     outline: none; 
 }
 
-/* The Close Button */
 .close-modal {
     color: #aaa;
     float: right;
@@ -992,44 +975,37 @@ footer {
     cursor: pointer;
 }
 
-/* Keyframe for simple fade-in effect */
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
-/* Optional: Prevent scrolling when modal is open */
 .modal-open {
     overflow: hidden;
 }
 
-/* the "hidden" state */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
 
-/* the "active" state when scrolled into view */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* 1. Initial state (hidden) */
 .reveal {
     opacity: 0;
-    transform: translateY(30px); /* Slides it down 30px */
-    transition: all 0.8s ease-out; /* Control the speed of the fade */
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
 }
 
-/* 2. Visible state (when it becomes active) */
 .reveal.active {
     opacity: 1;
-    transform: translateY(0); /* Returns to original position */
+    transform: translateY(0);
 }
 
-/* 1. THE BASE BUTTON STYLE (REMAINS YOUR ORIGINAL) */
 .fab-btn {
     position: fixed;
     right: 30px;
@@ -1049,8 +1025,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* 2. PHONE BUTTON (BOTTOM) */
-/* This assumes your phone link has the class "call" or is the default fab-btn */
 .fab-btn.call, .fab-btn:not(.quote):not(.viber) {
     bottom: 30px;
     background-color: var(--primary);
@@ -1058,28 +1032,25 @@ footer {
     animation: pulse 2s infinite;
 }
 
-/* 3. QUOTE BUTTON (MIDDLE) */
 .fab-btn.quote {
-    bottom: 105px; /* 30 + 60 height + 15 gap */
+    bottom: 105px;
     background-color: var(--primary);
     color: #000;
     border: none;
     cursor: pointer;
 }
 
-/* 4. VIBER BUTTON (TOP) */
 .fab-btn.viber {
-    bottom: 180px; /* 105 + 60 height + 15 gap */
-    background-color: #7360f2; /* Viber purple */
+    bottom: 180px;
+    background-color: #7360f2;
     color: white;
-    animation: none; /* Removed pulse to keep it distinct */
+    animation: none;
 }
 
 .fab-btn.viber:hover {
     background-color: #5949d8;
 }
 
-/* 5. ORIGINAL PULSE ANIMATION */
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 222, 0, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(255, 222, 0, 0); }

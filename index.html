@@ -2,56 +2,58 @@
 <html lang="en">
 <head>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Eboy Electrical Rewinding Services",
-      "image": "https://j-dcl.github.io/EboyElectrical/preview.jpg.png",
-      "telephone": "09060768122",
-      "email": "d.bebot23@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Block 21 Lot 1, Lapu-Lapu Ave",
-        "addressLocality": "Navotas",
-        "addressRegion": "Metro Manila",
-        "postalCode": "1409",
-        "addressCountry": "PH"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 14.649556426819768, 
-        "longitude": 120.95808186361933
-      },
-      "openingHoursSpecification": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "16:00"
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Eboy Electrical Rewinding Services",
+            "image": "https://j-dcl.github.io/EboyElectrical/preview.jpg",
+            "telephone": "09060768122",
+            "email": "eboyelectricalrs@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Block 21 Lot 1, Lapu-Lapu Ave",
+                "addressLocality": "Navotas",
+                "addressRegion": "Metro Manila",
+                "postalCode": "1409",
+                "addressCountry": "PH"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 14.649556426819768, 
+                "longitude": 120.95808186361933
+            },
+            "openingHoursSpecification": [
+                {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "16:00"
+            }
+            ],
+                "priceRange": "₱₱",
+                "areaServed": ["Philippines", "Navotas", "Malabon", "Caloocan"],
+                "knowsAbout": ["Marine Electrical Repair", "Electric Motor Rewinding", "Industrial Generator Repair", "AVR Fabrication"],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "24"
+            },
+                "review": [
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Bernardo D."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewBody": "Reliable motor rewinding shop. My industrial pump was fixed ahead of schedule."
+            }
+            ]
         }
-      ],
-      "priceRange": "₱₱",
-      "areaServed": [
-        "Philippines",
-        "International",
-        "Navotas",
-        "Malabon",
-        "Caloocan"
-      ],
-      "knowsAbout": [
-        "Marine Electrical Repair",
-        "Electric Motor Rewinding",
-        "Industrial Generator Repair",
-        "AVR Fabrication"
-      ]
-    }
-    </script>
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eboy Electrical | Industrial Motor Rewinding & Marine Repair Navotas</title> 
@@ -64,12 +66,17 @@
     <meta property="og:type" content="website">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <meta name="robots" content="index, follow"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFDE00">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        .slide { background-color: #0a0a0a; background-image: url('showcase-tiny-blur.jpg'); background-size: cover; }
+    </style>
 </head>
 
 <body>
@@ -77,12 +84,12 @@
         <i class="fas fa-file-invoice"></i>
     </button>
 
-    <a href="tel:09060768122" class="fab-btn" aria-label="Call Us">
+    <a href="tel:09060768122" class="fab-btn call" aria-label="Call Us">
         <i class="fas fa-phone-alt"></i>
     </a>
 
     <a href="viber://chat?number=%2B639060768122" class="fab-btn viber" aria-label="Message on Viber">
-    <i class="fab fa-viber"></i>
+        <i class="fab fa-viber"></i>
     </a>
 
     <div id="preloader">
@@ -124,9 +131,7 @@
                 <div class="slide"><img src="showcase3.png" alt="Industrial"></div>
             </div>
         </div>
-
         <div class="hero-overlay"></div>
-
         <div class="hero-content hidden">
             <h1 class="glitch-text">
                 WE ARE EXPERTS IN <br>
@@ -185,38 +190,37 @@
         <div class="container">
             <h2 class="section-title center">PROJECT <span class="accent">SHOWCASE</span></h2>
             <p class="center" style="margin-bottom: 40px; color: #aaa;">A glimpse into our workshop, recent repairs, and daily operations.</p>
-            
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="showcase1.png" alt="Induction Motor">
+                    <img src="showcase1.webp" alt="Induction Motor">
                     <div class="overlay">
                         <h3>Rewinding</h3>
                         <p>11kW Induction Motor</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="showcase2.png" alt="Subpump">
+                    <img src="showcase2.webp" alt="Subpump">
                     <div class="overlay">
                         <h3>Rewinding</h3>
                         <p>Three Submersible Pump Motors</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="showcase3.png" alt="Repair">
+                    <img src="showcase3.webp" alt="Repair">
                     <div class="overlay">
                         <h3>Repair</h3>
                         <p>Repair and Restoration of AVR</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="showcase4.png" alt="Shower Motor">
+                    <img src="showcase4.webp" alt="Shower Motor">
                     <div class="overlay">
                         <h3>Rewinding</h3>
                         <p>5.5kW Shower Motor</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="showcase5.png" alt="Industrial Diesel Generator">
+                    <img src="showcase5.webp" alt="Industrial Diesel Generator">
                     <div class="overlay">
                         <h3>Rewinding</h3>
                         <p>Industrial Diesel Generator</p>
@@ -232,7 +236,6 @@
                     </div>
                 </div>
             </div>
-
             <div style="margin-top: 50px; text-align: center;">
                 <p style="color: #fff; margin-bottom: 20px;">Want to see more of our recent projects?</p>
                 <a href="https://www.facebook.com/eboyelectricalrs" target="_blank" class="btn btn-primary">
@@ -247,7 +250,6 @@
             <div class="contact-info">
                 <h2 class="section-title">GET IN <span class="accent">TOUCH</span></h2>
                 <p>Ready to restore your power? Visit our shop or give us a call.</p>
-                
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
@@ -255,7 +257,6 @@
                         <p>Block 21 Lot 1, Lapu-Lapu Ave,<br>Navotas, 1409 Metro Manila</p>
                     </div>
                 </div>
-
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
                     <div>
@@ -264,7 +265,6 @@
                         <p><a href="mailto:d.bebot23@gmail.com">d.bebot23@gmail.com</a></p>
                     </div>
                 </div>
-
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
                     <div>
@@ -272,7 +272,6 @@
                         <p><a href="tel:09060768122">0906 076 8122</a></p>
                     </div>
                 </div>
-
                 <div class="hours-box">
                     <h4>Operating Hours</h4>
                     <ul>
@@ -282,11 +281,8 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1157612199313!2d120.95510997619039!3d14.649369585842795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4f64eeacc19%3A0x4189a9ef2bb04351!2sEboy%20Electrical%20Rewinding%20Services!5e0!3m2!1sen!2sph!4v1765470900391!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1157612199313!2d120.95510997619039!3d14.649369585842795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4f64eeacc19%3A0x4189a9ef2bb04351!2sEboy%20Electrical%20Rewinding%20Services!5e0!3m2!1sen!2sph!4v1765470900391!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -340,9 +336,7 @@
     </div>
 
     <script src="script.js"></script>
-    
     <script>
-    // Reveal function for scroll animations
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
@@ -355,13 +349,11 @@
         }
     }
     window.addEventListener("scroll", reveal);
-    reveal(); // Run once on load
+    reveal();
 
-    // Form submission logic
     const form = document.querySelector('.quote-form');
     form.addEventListener("submit", function(event) {
         event.preventDefault(); 
-        
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerText;
         submitBtn.innerText = "Sending...";
