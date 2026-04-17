@@ -36,7 +36,7 @@
                 "closes": "16:00"
             }
             ],
-                "priceRange": "₱₱",
+                "priceRange": "₱",
                 "areaServed": ["Philippines", "Navotas", "Malabon", "Caloocan"],
                 "knowsAbout": ["Marine Electrical Repair", "Electric Motor Rewinding", "Industrial Generator Repair", "AVR Fabrication"],
                 "aggregateRating": {
@@ -69,7 +69,11 @@
     <meta name="theme-color" content="#FFDE00">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/rajdhani/v15/LDI2apCSOQq7S3bPacyHPDbe.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
@@ -121,14 +125,14 @@
     <section id="home" class="hero">
         <div class="sliding-background">
             <div class="slide-track">
-                <div class="slide"><img src="showcase1.png" alt="Workshop"></div>
-                <div class="slide"><img src="showcase2.png" alt="Motor"></div>
-                <div class="slide"><img src="showcase3.png" alt="Tools"></div>
-                <div class="slide"><img src="showcase1.png" alt="Industrial"></div>
-                <div class="slide"><img src="showcase4.png" alt="Workshop"></div>
-                <div class="slide"><img src="showcase5.png" alt="Motor"></div>
-                <div class="slide"><img src="showcase2.png" alt="Tools"></div>
-                <div class="slide"><img src="showcase3.png" alt="Industrial"></div>
+                <div class="slide"><img src="showcase1.webp" alt="Workshop"></div>
+                <div class="slide"><img src="showcase2.webp" alt="Motor"></div>
+                <div class="slide"><img src="showcase3.webp" alt="Tools"></div>
+                <div class="slide"><img src="showcase1.webp" alt="Industrial"></div>
+                <div class="slide"><img src="showcase4.webp" alt="Workshop"></div>
+                <div class="slide"><img src="showcase5.webp" alt="Motor"></div>
+                <div class="slide"><img src="showcase2.webp" alt="Tools"></div>
+                <div class="slide"><img src="showcase3.webp" alt="Industrial"></div>
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -282,7 +286,15 @@
                 </div>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1157612199313!2d120.95510997619039!3d14.649369585842795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4f64eeacc19%3A0x4189a9ef2bb04351!2sEboy%20Electrical%20Rewinding%20Services!5e0!3m2!1sen!2sph!4v1765470900391!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.1157612199313!2d120.95510997619039!3d14.649369585842795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b4f64eeacc19%3A0x4189a9ef2bb04351!2sEboy%20Electrical%20Rewinding%20Services!5e0!3m2!1sen!2sph!4v1765470900391!5m2!1sen!2sph"
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps location of Eboy Electrical Rewinding Services in Navotas">
+                </iframe>
             </div>
         </div>
     </section>
@@ -336,7 +348,7 @@
         <div class="scroll-progress-bar" id="myBar"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script>
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
