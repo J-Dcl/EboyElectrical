@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-display: swap;
+    src: local('Font Awesome 6 Free');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-display: swap;
+    src: local('Font Awesome 6 Brands');
+}
+
 .fas, .fab, .fa-solid, .fa-brands {
     font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
     display: inline-block;
